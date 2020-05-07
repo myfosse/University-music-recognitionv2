@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/buttonLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/round_shape_button"
+        android:drawableLeft="@drawable/ic_tab3_location"
+        android:text="Location"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/buttonMainEngineer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/round_shape_button"
+        android:drawableLeft="@drawable/ic_tab3_mainengineer"
+        android:text="Main AI &amp; Server Engineer"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/buttonEngineer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/round_shape_button"
+        android:drawableLeft="@drawable/ic_tab3_engineer"
+        android:text="AI &amp; Server Engineer"
+        android:textColor="@android:color/black" />
+
+
+    <Button
+        android:id="@+id/buttonAndroid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/round_shape_button"
+        android:drawableLeft="@drawable/ic_tab3_android"
+        android:text="Android Engineer"
+        android:textColor="@android:color/black" />
+
+    <Button
+        android:id="@+id/buttonMidi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_weight="0.1"
+        android:background="@drawable/round_shape_button"
+        android:drawableLeft="@drawable/ic_tab3_midi"
+        android:text="Midi Engineer"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/corporation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:enabled="false"
+        android:focusable="false"
+        android:gravity="center|bottom"
+        android:text="@string/corporation_name"
+        android:textColor="@android:color/black"
+        android:textSize="24sp" />
+
+</LinearLayout>
