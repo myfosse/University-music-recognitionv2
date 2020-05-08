@@ -46,7 +46,8 @@
             android:text="@string/midi_vk"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_tab3_vk"/>
 
     </LinearLayout>
 
@@ -66,7 +67,8 @@
             android:text="@string/midi_call"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_tab3_call"/>
 
     </LinearLayout>
 
@@ -86,7 +88,8 @@
             android:text="@string/midi_mail"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:drawableStart="@drawable/ic_tab3_mail"/>
 
     </LinearLayout>
 
