@@ -14,8 +14,8 @@
         android:layout_margin="5dp"
         android:layout_weight="0.1"
         android:background="@drawable/round_shape_button"
-        android:drawableLeft="@drawable/ic_tab3_location"
-        android:text="Location"
+        android:drawableStart="@drawable/ic_tab3_location"
+        android:text="@string/location"
         android:textColor="@android:color/black" />
 
     <Button
@@ -25,8 +25,8 @@
         android:layout_margin="5dp"
         android:layout_weight="0.1"
         android:background="@drawable/round_shape_button"
-        android:drawableLeft="@drawable/ic_tab3_mainengineer"
-        android:text="Main AI &amp; Server Engineer"
+        android:drawableStart="@drawable/ic_tab3_mainengineer"
+        android:text="@string/main_ai_amp_server_engineer"
         android:textColor="@android:color/black" />
 
     <Button
@@ -36,8 +36,8 @@
         android:layout_margin="5dp"
         android:layout_weight="0.1"
         android:background="@drawable/round_shape_button"
-        android:drawableLeft="@drawable/ic_tab3_engineer"
-        android:text="AI &amp; Server Engineer"
+        android:drawableStart="@drawable/ic_tab3_engineer"
+        android:text="@string/ai_amp_server_engineer"
         android:textColor="@android:color/black" />
 
 
@@ -48,8 +48,8 @@
         android:layout_margin="5dp"
         android:layout_weight="0.1"
         android:background="@drawable/round_shape_button"
-        android:drawableLeft="@drawable/ic_tab3_android"
-        android:text="Android Engineer"
+        android:drawableStart="@drawable/ic_tab3_android"
+        android:text="@string/android_engineer"
         android:textColor="@android:color/black" />
 
     <Button
@@ -59,8 +59,8 @@
         android:layout_margin="5dp"
         android:layout_weight="0.1"
         android:background="@drawable/round_shape_button"
-        android:drawableLeft="@drawable/ic_tab3_midi"
-        android:text="Midi Engineer"
+        android:drawableStart="@drawable/ic_tab3_midi"
+        android:text="@string/midi_engineer"
         android:textColor="@android:color/black" />
 
     <TextView
@@ -68,11 +68,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:enabled="false"
-        android:focusable="false"
+        android:enabled="true"
+        android:focusable="true"
         android:gravity="center|bottom"
         android:text="@string/corporation_name"
         android:textColor="@android:color/black"
-        android:textSize="24sp" />
+        android:textSize="16sp" />
 
 </LinearLayout>

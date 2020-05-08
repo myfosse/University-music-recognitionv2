@@ -33,12 +33,13 @@
         </activity>
 
         <activity android:name=".Tab1HomeActivity" />
-
-        <activity android:name=".Tab3InfoActivity" />
-
         <activity android:name=".AudioPlayer" />
-
         <activity android:name=".Tab2AudioListActivity" />
+        <activity android:name=".Tab3InfoActivity" />
+        <activity android:name=".Tab3InfoMainEngineerActivity" />
+        <activity android:name=".Tab3InfoEngineerActivity" />
+        <activity android:name=".Tab3InfoAndroidActivity" />
+        <activity android:name=".Tab3InfoMidiActivity" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

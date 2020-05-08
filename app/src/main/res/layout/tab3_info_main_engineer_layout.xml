@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_tab3_engineer_fon"
+    android:background="@drawable/ic_tab3_main_engineer_fon"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".MainActivity">
@@ -14,7 +14,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/infoTextEngineerName"
+            android:id="@+id/infoTextMainEngineerName"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
@@ -23,7 +23,7 @@
             android:enabled="true"
             android:focusable="true"
             android:gravity="center|bottom"
-            android:text="@string/engineer_name"
+            android:text="@string/main_engineer_name"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="24sp" />
@@ -36,14 +36,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/infoTextEngineerVK"
+            android:id="@+id/infoTextMainEngineerVK"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/backInfoText"
             android:enabled="true"
             android:focusable="true"
             android:gravity="center|bottom"
-            android:text="@string/engineer_vk"
+            android:text="@string/main_engineer_vk"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="20sp" />
@@ -56,14 +56,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/infoTextEngineerCall"
+            android:id="@+id/infoTextMainEngineerCall"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/backInfoText"
             android:enabled="true"
             android:focusable="true"
             android:gravity="center|bottom"
-            android:text="@string/engineer_call"
+            android:text="@string/main_engineer_call"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="20sp" />
@@ -76,14 +76,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/infoTextEngineerMail"
+            android:id="@+id/infoTextMainEngineerMail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/backInfoText"
             android:enabled="true"
             android:focusable="true"
             android:gravity="center|bottom"
-            android:text="@string/engineer_mail"
+            android:text="@string/main_engineer_mail"
             android:textColor="@android:color/black"
             android:textIsSelectable="true"
             android:textSize="20sp" />
@@ -96,7 +96,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/buttonEngineerVK"
+            android:id="@+id/buttonMainEngineerVK"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -106,7 +106,7 @@
             android:text="@string/open_vk" />
 
         <Button
-            android:id="@+id/buttonEngineerCall"
+            android:id="@+id/buttonMainEngineerCall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -116,7 +116,7 @@
             android:text="@string/call" />
 
         <Button
-            android:id="@+id/buttonEngineerMail"
+            android:id="@+id/buttonMainEngineerMail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

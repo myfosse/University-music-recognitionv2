@@ -53,7 +53,6 @@ public class Tab1HomeActivity extends Activity {
     private String currentPhotoPath;
     private EditText serverUrl;
     private static final int STANDARD_FILE_CHOOSER = 1000;
-    //private MediaPlayer mediaPlayer;
 
     private Button buttonCamera;
     private Button buttonGallery;
@@ -93,8 +92,6 @@ public class Tab1HomeActivity extends Activity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
         setContentView(R.layout.tab1_home_layout);
 
-        //mediaPlayer = MediaPlayer.create(this, R.raw.best);
-
         buttonCamera = findViewById(R.id.btnCamera);
         buttonGallery = findViewById(R.id.btnGallery);
         buttonSend = findViewById(R.id.btnSend);
@@ -133,18 +130,6 @@ public class Tab1HomeActivity extends Activity {
             }
         });
 
-        /*imageView.setOnLongClickListener(view -> {
-            Vibrator v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                v.vibrate(VibrationEffect.createOneShot(200, VibrationEffect.DEFAULT_AMPLITUDE));
-            } else {
-                v.vibrate(200);
-            }
-            mediaPlayer = MediaPlayer.create(Tab1HomeActivity.this, R.raw.best);
-            Toast.makeText(Tab1HomeActivity.this, "Long click", Toast.LENGTH_SHORT).show();
-            return true;
-        });*/
-
         if (checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
                 != PackageManager.PERMISSION_GRANTED) {
             if (shouldShowRequestPermissionRationale(
@@ -173,7 +158,6 @@ public class Tab1HomeActivity extends Activity {
     }
 
     private File createMidiFile() throws IOException {
-        // Create an image file name
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         String imageFileName = "audio_" + timeStamp + "_";
         File storageDir = getExternalFilesDir(Environment.DIRECTORY_DOWNLOADS);
@@ -249,7 +233,6 @@ public class Tab1HomeActivity extends Activity {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                //mediaPlayer = MediaPlayer.create(Tab1HomeActivity.this, Uri.fromFile(musicFile));
                 Toast.makeText(Tab1HomeActivity.this, "midi succes", Toast.LENGTH_SHORT).show();
             }
 
@@ -257,7 +240,6 @@ public class Tab1HomeActivity extends Activity {
             public void onFailure(int statusCode, Header[] headers, byte[] responseBody, Throwable error) {
                 progress.dismiss();
                 Toast.makeText(Tab1HomeActivity.this, "midi fail", Toast.LENGTH_SHORT).show();
-
             }
         });
     }

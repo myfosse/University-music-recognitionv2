@@ -1,5 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_tab3_midi_fon"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/infoTextMidiName"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:background="@drawable/round_shape_button"
+            android:drawableStart="@drawable/ic_tab3_person"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center|bottom"
+            android:text="@string/midi_name"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/infoTextMidiVK"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backInfoText"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center|bottom"
+            android:text="@string/midi_vk"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/infoTextMidiCall"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backInfoText"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center|bottom"
+            android:text="@string/midi_call"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/infoTextMidiMail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/backInfoText"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center|bottom"
+            android:text="@string/midi_mail"
+            android:textColor="@android:color/black"
+            android:textIsSelectable="true"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/buttonMidiVK"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_button"
+            android:drawableStart="@drawable/ic_tab3_vk"
+            android:text="@string/open_vk" />
+
+        <Button
+            android:id="@+id/buttonMidiCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_button"
+            android:drawableStart="@drawable/ic_tab3_call"
+            android:text="@string/call" />
+
+        <Button
+            android:id="@+id/buttonMidiMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/round_shape_button"
+            android:drawableStart="@drawable/ic_tab3_mail"
+            android:text="@string/mail" />
+
+    </LinearLayout>
+
+</LinearLayout>

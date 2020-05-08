@@ -47,12 +47,10 @@ public class Tab2AudioListActivity extends Activity {
             }, 1000);
         });
 
-        // Scheme colors for animation
         swipeLayout.setColorSchemeColors(
                 getResources().getColor(android.R.color.holo_blue_bright),
                 getResources().getColor(android.R.color.holo_green_light),
-                getResources().getColor(android.R.color.holo_orange_light),
-                getResources().getColor(android.R.color.holo_red_light)
+                getResources().getColor(android.R.color.holo_orange_light)
         );
 
         Dexter.withActivity(this)

@@ -1,6 +1,41 @@
 <resources>
 
     <string name="app_name">MusicRecognition</string>
+
     <string name="corporation_name">©otvinta, 2019 - 2020</string>
+
+    <string name="main_engineer_name">Dementey Vladislav Yurievich</string>
+    <string name="main_engineer_vk">https://vk.com/slawlad</string>
+    <string name="main_engineer_call">+375 (29) 253-55-15</string>
+    <string name="main_engineer_mail">vladementei@gmail.com</string>
+
+    <string name="engineer_name">Kizenkov Vladislav Sergeevich</string>
+    <string name="engineer_vk">https://vk.com/betoyoung</string>
+    <string name="engineer_call">+375 (44) 747-68-86</string>
+    <string name="engineer_mail">vlad.kizenkov@mail.ru</string>
+
+    <string name="android_name">Egorov Andrey Alexandrovich</string>
+    <string name="android_vk">https://vk.com/myfosse</string>
+    <string name="android_call">+375 (29) 396-06-75</string>
+    <string name="android_mail">andrey.egorov.minsk@gmail.com</string>
+
+    <string name="midi_name">Poletaeva Tatyana Sergeevna</string>
+    <string name="midi_vk">https://vk.com/tans2000</string>
+    <string name="midi_call">+375 (44) 727-01-10</string>
+    <string name="midi_mail">tpolet2000@gmail.com</string>
+
+    <string name="song_name">Song Name</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="open_gallery">Open Gallery</string>
+    <string name="send_photo">Send Photo</string>
+    <string name="http_id_ngrok_io">http://381e4e95.ngrok.io/</string>
+    <string name="open_vk">View VK</string>
+    <string name="call">Call</string>
+    <string name="mail">Send Mail</string>
+    <string name="location">View Location</string>
+    <string name="main_ai_amp_server_engineer"><![CDATA[Main AI & Server Engineer]]></string>
+    <string name="ai_amp_server_engineer"><![CDATA[AI & Server Engineer]]></string>
+    <string name="android_engineer">Android Engineer</string>
+    <string name="midi_engineer">Midi Engineer</string>
 
 </resources>
