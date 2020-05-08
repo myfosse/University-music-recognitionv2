@@ -16,6 +16,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.os.Handler;
 import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.DocumentsContract;
@@ -33,6 +34,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
@@ -63,27 +65,7 @@ public class Tab1HomeActivity extends Activity {
 
     private Intent takePictureIntent = null;
 
-    final int MENU_IMAGE_DELETE = 1;
-
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-        switch (v.getId()) {
-            case R.id.imageView:
-                menu.add(0, MENU_IMAGE_DELETE, 0, "Delete");
-                break;
-        }
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case MENU_IMAGE_DELETE:
-                imageView.setImageDrawable(null);
-                break;
-        }
-        return super.onContextItemSelected(item);
-    }
+    private SwipeRefreshLayout swipeLayout;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -99,6 +81,20 @@ public class Tab1HomeActivity extends Activity {
         serverUrl = findViewById(R.id.serverUrl);
 
         registerForContextMenu(imageView);
+
+        swipeLayout = findViewById(R.id.swipe_container);
+
+        swipeLayout.setOnRefreshListener(() -> {
+            imageView.setImageDrawable(null);
+            Toast.makeText(getApplicationContext(), "Clear", Toast.LENGTH_LONG).show();
+            new Handler().postDelayed(() -> {
+                swipeLayout.setRefreshing(false);
+            }, 100);
+        });
+
+        swipeLayout.setColorSchemeColors(
+                getResources().getColor(android.R.color.holo_blue_bright)
+        );
 
         buttonGallery.setOnClickListener(view -> showFileChooser());
 

@@ -108,6 +108,7 @@ public class AudioPlayer extends AppCompatActivity {
 
             }
         });
+
         pauseButton.setOnClickListener(v -> {
             seekBar.setMax(mediaPlayer.getDuration());
             if (mediaPlayer.isPlaying()) {
@@ -138,6 +139,7 @@ public class AudioPlayer extends AppCompatActivity {
             }
 
         });
+
         previousButton.setOnClickListener(v -> {
             mediaPlayer.stop();
             mediaPlayer.release();
@@ -164,7 +166,6 @@ public class AudioPlayer extends AppCompatActivity {
         if (item.getItemId() == android.R.id.home) {
             onBackPressed();
         }
-
         return super.onOptionsItemSelected(item);
     }
 }
