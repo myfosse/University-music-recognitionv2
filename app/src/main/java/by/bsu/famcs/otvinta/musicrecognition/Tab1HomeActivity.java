@@ -21,6 +21,7 @@ import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -36,6 +37,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.JsonFactory;
+import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.api.services.sheets.v4.Sheets;
+import com.google.api.services.sheets.v4.model.ValueRange;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.AsyncHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
@@ -53,7 +60,7 @@ public class Tab1HomeActivity extends Activity {
 
     private ImageView imageView;
     private String currentPhotoPath;
-    private EditText serverUrl;
+    private String serverUrl = "";
     private static final int STANDARD_FILE_CHOOSER = 1000;
 
     private Button buttonCamera;
@@ -78,7 +85,6 @@ public class Tab1HomeActivity extends Activity {
         buttonGallery = findViewById(R.id.btnGallery);
         buttonSend = findViewById(R.id.btnSend);
         imageView = findViewById(R.id.imageView);
-        serverUrl = findViewById(R.id.serverUrl);
 
         registerForContextMenu(imageView);
 
@@ -135,6 +141,8 @@ public class Tab1HomeActivity extends Activity {
             requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
                     1111);
         }
+
+        getServerUrl();
     }
 
     private File createImageFile() throws IOException {
@@ -199,6 +207,33 @@ public class Tab1HomeActivity extends Activity {
         }
     }
 
+    public void getServerUrl() {
+        HttpTransport transport = AndroidHttp.newCompatibleTransport();
+        JsonFactory factory = JacksonFactory.getDefaultInstance();
+        final Sheets sheetsService = new Sheets.Builder(transport, factory, null)
+                .setApplicationName("Otvinta Mobile")
+                .build();
+        final String spreadsheetId = Config.spreadsheet_id;
+
+        new Thread(() -> {
+            try {
+                String range = "A1:A1";
+                ValueRange result = sheetsService.spreadsheets().values()
+                        .get(spreadsheetId, range)
+                        .setKey(Config.google_api_key)
+                        .execute();
+                String serverUrl = (String) result.getValues().get(0).get(0);
+                if (serverUrl != null) {
+                    Log.d("SUCCESS.", serverUrl);
+                    runOnUiThread(() -> Toast.makeText(Tab1HomeActivity.this, serverUrl, Toast.LENGTH_SHORT).show());
+                    Tab1HomeActivity.this.serverUrl = serverUrl;
+                }
+            } catch (IOException e) {
+                Log.e("Sheets failed", e.getLocalizedMessage());
+            }
+        }).start();
+    }
+
     public void sendRequest() {
         File f = new File(currentPhotoPath);
         File myFile = new File(currentPhotoPath);
@@ -215,7 +250,7 @@ public class Tab1HomeActivity extends Activity {
         progress.show();
 
         AsyncHttpClient client = new AsyncHttpClient();
-        client.post(serverUrl.getText().toString(), params, new AsyncHttpResponseHandler() {
+        client.post(serverUrl, params, new AsyncHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, byte[] responseBody) {
                 progress.dismiss();
